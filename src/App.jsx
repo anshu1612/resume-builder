@@ -5,6 +5,7 @@ import Achievements from "./components/Achievements";
 import Experience from "./components/Experience";
 import Education from "./components/Education";
 import Project from "./components/Project";
+import Skills from "./components/Skills";
 
 function App() {
   const [aboutData, setAboutData] = useState({
@@ -45,6 +46,7 @@ function App() {
   const [projects, setProjects] = useState([
     { projectName: "", link: "", description: "" },
   ]);
+  const [skills, setSkills] = useState([{ name: "" }]);
 
   return (
     <>
@@ -162,6 +164,29 @@ function App() {
           }
           deleteProject={(index) =>
             setProjects((projects) => projects.filter((_, i) => i !== index))
+          }
+        />
+        <Skills
+          skills={skills}
+          onChange={(e, index) => {
+            setSkills((skills) =>
+              skills.map((skill, i) =>
+                i === index
+                  ? { ...skill, [e.target.name]: e.target.value }
+                  : skill
+              )
+            );
+          }}
+          addSkill={() =>
+            setSkills((skills) => [
+              ...skills,
+              {
+                name: "",
+              },
+            ])
+          }
+          deleteSkill={(index) =>
+            setSkills((skills) => skills.filter((_, i) => i !== index))
           }
         />
 
