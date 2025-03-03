@@ -1,6 +1,6 @@
 import SectionHeading from "./SectionHeading";
 import FormField from "./FormField";
-const About = ({ formData, handleChange, handleFileChange }) => {
+const About = ({ aboutData, aboutChange, aboutFileChange }) => {
   return (
     <>
       <SectionHeading heading={"ABOUT SECTION"} />
@@ -10,70 +10,70 @@ const About = ({ formData, handleChange, handleFileChange }) => {
           label="First Name"
           placeholder="e.g. John"
           type="text"
-          value={formData.firstName}
-          handleChange={handleChange}
+          value={aboutData.firstName}
+          onChange={aboutChange}
         />
         <FormField
           name="middleName"
           label="Middle Name"
           placeholder="e.g. Herbert"
           type="text"
-          value={formData.middleName}
-          handleChange={handleChange}
+          value={aboutData.middleName}
+          onChange={aboutChange}
         />
         <FormField
           name="lastName"
           label="Last Name"
           placeholder="e.g. Doe"
           type="text"
-          value={formData.lastName}
-          handleChange={handleChange}
+          value={aboutData.lastName}
+          onChange={aboutChange}
         />
         <FormField
           name="resumeFile"
           label="Your Image"
           type="file"
-          handleFileChange={handleFileChange}
+          onFileChange={aboutFileChange}
         />
         <FormField
           name="designation"
           label="Designation"
           placeholder="e.g. Sr.Accountants"
           type="text"
-          value={formData.designation}
-          handleChange={handleChange}
+          value={aboutData.designation}
+          onChange={aboutChange}
         />
         <FormField
           name="address"
           label="Address"
           placeholder="e.g. Lake Street-23"
           type="text"
-          value={formData.address}
-          handleChange={handleChange}
+          value={aboutData.address}
+          onChange={aboutChange}
         />
         <FormField
           name="email"
           label="Email"
           placeholder="e.g. johndoe@gmail.com"
           type="text"
-          value={formData.email}
-          handleChange={handleChange}
+          value={aboutData.email}
+          onChange={aboutChange}
         />
         <FormField
           name="phoneNo"
           label="Phone No."
           placeholder="e.g. 946-754-489"
           type="text"
-          value={formData.phoneNo}
-          handleChange={handleChange}
+          value={aboutData.phoneNo}
+          onChange={aboutChange}
         />
         <FormField
           name="summary"
           label="Summary"
           placeholder="e.g. Doe"
           type="text"
-          value={formData.summary}
-          handleChange={handleChange}
+          value={aboutData.summary}
+          onChange={aboutChange}
         />
       </div>
     </>

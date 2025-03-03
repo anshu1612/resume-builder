@@ -6,8 +6,8 @@ const FormField = ({
   placeholder,
   type,
   value,
-  handleChange,
-  handleFileChange,
+  onChange,
+  onFileChange,
 }) => {
   return (
     <div className="flex flex-col">
@@ -18,7 +18,7 @@ const FormField = ({
         className="p-2 outline-none border border-gray-300"
         type={type}
         placeholder={placeholder}
-        onChange={type == "file" ? handleFileChange : handleChange}
+        onChange={type == "file" ? onFileChange : onChange}
       />
     </div>
   );
