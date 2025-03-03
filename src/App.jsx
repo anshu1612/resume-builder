@@ -23,7 +23,7 @@ function App() {
   return (
     <>
       <NavBar />
-      <div className="m-12">
+      <div className="m-6 md:m-12 ">
         <About
           aboutData={aboutData}
           aboutChange={(e) =>

@@ -4,7 +4,7 @@ const About = ({ aboutData, aboutChange, aboutFileChange }) => {
   return (
     <>
       <SectionHeading heading={"ABOUT SECTION"} />
-      <div className=" grid grid-cols-3 gap-6 p-6 border my-5 border-gray-300">
+      <div className=" grid grid-cols-1  md:grid-cols-3 gap-6 p-6 border my-5 border-gray-300">
         <FormField
           name="firstName"
           label="First Name"

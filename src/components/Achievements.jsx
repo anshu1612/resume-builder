@@ -17,12 +17,12 @@ const Achievements = ({
       {achievements.map((achievement, index) => (
         <div
           key={index}
-          className="relative grid grid-cols-2 gap-6 p-6 border my-5 border-gray-300"
+          className="relative grid grid-cols-1 gap-6 md:grid-cols-2 p-6 border my-5 border-gray-300"
         >
           {index !== 0 && (
             <button
               className="absolute top-2 right-2  text-red-600 text-3xl"
-              onClick={()=>deleteAchievement(index)}
+              onClick={() => deleteAchievement(index)}
             >
               <IoMdRemoveCircle />
             </button>
