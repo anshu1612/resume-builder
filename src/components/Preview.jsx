@@ -14,43 +14,30 @@ const Preview = ({
   const handleDownloadPDF = () => {
     const input = previewRef.current;
 
-    input.classList.remove("grid-cols-1");
-    input.classList.add("grid-cols-3");
+    html2canvas(input, { scale: 2 }).then((canvas) => {
+      const imgData = canvas.toDataURL("image/png");
+      const pdf = new jsPDF("p", "mm", "a4");
+      const imgWidth = 210;
+      const imgHeight = (canvas.height * imgWidth) / canvas.width;
 
-    setTimeout(() => {
-      html2canvas(input, { scale: 2 }).then((canvas) => {
-        const imgData = canvas.toDataURL("image/png");
-        const pdf = new jsPDF("p", "mm", "a4");
-        const imgWidth = 210;
-        const imgHeight = (canvas.height * imgWidth) / canvas.width;
-
-        pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
-        pdf.save("resume.pdf");
-
-        input.classList.remove("grid-cols-3");
-        input.classList.add("grid-cols-1");
-      });
-    }, 500);
+      pdf.addImage(imgData, "PNG", 0, 0, imgWidth, imgHeight);
+      pdf.save("resume.pdf");
+    });
   };
 
   return (
     <>
-      <div
-        ref={previewRef}
-        className="grid grid-cols-1 sm:grid-cols-3 shadow-lg mt-20"
-      >
+      <div ref={previewRef} className="grid grid-cols-3 shadow-lg mt-20">
         <div className="bg-teal-900 text-white p-7">
           <div className="mb-8 flex flex-col py-2 items-center">
-            {aboutData.imageFile && (
-              <img
-                className=" h-32 w-32 rounded-full object-cover"
-                src={
-                  aboutData.imageFile
-                    ? URL.createObjectURL(aboutData.imageFile)
-                    : null
-                }
-              />
-            )}
+           {aboutData.imageFile && <img
+              className=" h-32 w-32 rounded-full object-cover"
+              src={
+                aboutData.imageFile
+                  ? URL.createObjectURL(aboutData.imageFile)
+                  : null
+              }
+            />}
             <h1 className="text-center mt-8 font-bold text-2xl">
               {aboutData.firstName +
                 " " +
