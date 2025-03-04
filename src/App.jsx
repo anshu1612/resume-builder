@@ -13,7 +13,7 @@ function App() {
     firstName: "",
     middleName: "",
     lastName: "",
-    resumeFile: null,
+    imageFile: null,
     designation: "",
     address: "",
     email: "",
@@ -59,7 +59,7 @@ function App() {
             setAboutData({ ...aboutData, [e.target.name]: e.target.value })
           }
           aboutFileChange={(e) =>
-            setAboutData({ ...aboutData, resumeFile: e.target.files[0] })
+            setAboutData({ ...aboutData, imageFile: e.target.files[0] })
           }
         />
         <Achievements
@@ -190,7 +190,7 @@ function App() {
             setSkills((skills) => skills.filter((_, i) => i !== index))
           }
         />
-        <Preview aboutData={aboutData}/>
+        <Preview aboutData={aboutData} skills={skills} achievements={achievements} educations={educations} experiences={experiences} projects={projects}/>
 
         {console.log(aboutData)}
         {console.log(achievements)}

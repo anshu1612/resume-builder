@@ -30,7 +30,7 @@ const About = ({ aboutData, aboutChange, aboutFileChange }) => {
           onChange={aboutChange}
         />
         <FormField
-          name="resumeFile"
+          name="imageFile"
           label="Your Image"
           type="file"
           onFileChange={aboutFileChange}
