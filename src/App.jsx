@@ -6,6 +6,7 @@ import Experience from "./components/Experience";
 import Education from "./components/Education";
 import Project from "./components/Project";
 import Skills from "./components/Skills";
+import Preview from "./components/Preview";
 
 function App() {
   const [aboutData, setAboutData] = useState({
@@ -189,6 +190,7 @@ function App() {
             setSkills((skills) => skills.filter((_, i) => i !== index))
           }
         />
+        <Preview aboutData={aboutData}/>
 
         {console.log(aboutData)}
         {console.log(achievements)}
