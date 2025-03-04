@@ -27,7 +27,7 @@ const Preview = ({
 
   return (
     <>
-      <div ref={previewRef} className="grid grid-cols-3 shadow-lg mt-20">
+      <div ref={previewRef} className="grid grid-cols-1 sm:grid-cols-3 shadow-lg mt-20">
         <div className="bg-teal-900 text-white p-7">
           <div className="mb-8 flex flex-col py-2 items-center">
            {aboutData.imageFile && <img
